@@ -1,6 +1,6 @@
 <?php
 
-include_once('connect.php');
+require_once('./connection/connection.php');
 
 // Get form inputs
 
@@ -10,20 +10,28 @@ $lname = trim(strtoupper($_POST['lname']));
 $gender = trim(strtoupper($_POST['gender']));
 $course = trim(strtoupper($_POST['course']));
 
+// PDO FETCH METHOD
+$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+
 // Check if form submission is available
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!empty($regno) && !empty($fname) && !empty($lname) && !empty($email) && !empty($course)) {
-        // Check if the registration number is not taken
-        $query = "SELECT id FROM bitclass WHERE regno = '$regno'";
-        $queryResult = $pdo->prepare($query);
-        $queryResult->execute();
-
-        // if the registration number is not taken the save information into the database
-        if ($queryResult->fetch(PDO::FETCH_OBJ) === 0) {
-            $sql = "INSERT INTO bitclass(regno, fname, lname, gender, course) VALUES('$regno', '$fname', '$lname', '$gender', '$course')";
-            $sql_Result = $pdo->prepare($sql);
-            $sql_Result->bindValue();
-        }
+    
+    $query = 'SELECT * FROM bitclass WHERE regno = :regno';
+    $query_result = $pdo->prepare($query);
+    $query_result->execute(['regno' => $regno]);
+    $result = $query_result->fetch();
+    
+    if ($result) {
+        echo 'Registration number is already taken';
+        header("Location: /WebApp/index.php");
+        exit;
     }
-
+    else {
+        $sql = 'INSERT INTO bitclass(regno, fname, lname, gender, course) VALUES(:regno, :fname, :lname, :gender, :course)';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['regno' => $regno, 'fname' => $fname, 'lname' => $lname, 'gender' => $gender, 'course' => $course]);
+        echo 'Data saved successfully';
+        header("Location: /WebApp/index.php");
+        exit;
+    }
 }
