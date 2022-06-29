@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="navigation">
+    <div class="nav">
         <div class="nav-brand">
             <img src="logo.png" alt="CBE logo">
         </div>
