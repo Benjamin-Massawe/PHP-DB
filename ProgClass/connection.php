@@ -8,6 +8,3 @@ try {
 }catch (PDOException $e){
     $output = 'Unable to connect to the database server:' . $e->getMessage();
 }
-
-// PDO FETCH METHOD
-$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
