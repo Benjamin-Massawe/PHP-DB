@@ -18,7 +18,7 @@ form.onsubmit = (e) => {
     const xhr = new XMLHttpRequest();
 
     // Open connection
-    xhr.open('POST', 'required/save_to_db.php', true);
+    xhr.open('POST', '../save_to_db.php', true);
 
     // Execution of the ajax call
     // xhr.onload = function () {
@@ -88,59 +88,25 @@ form.onsubmit = (e) => {
 /* === Check inputs function  === */
 function checkInputs() {
 
-    /* === If regno is empty === */
-    if (regno.value.trim() === "") {
-        message.innerText = "Regno cannot be blank";
+    if (regno.value.trim() === "" || fname.value.trim() === "" || lname.value.trim() === "" || gender.value.trim() === "" || course.value.trim() === "") {
+        message.innerText = "Fields cannot be blank";
         message.classList.add('form-warning-animated');
         message.classList.remove('form-success-animated');
     } else {
-        message.classList.remove('form-warning-animated');
-        message.classList.add('form-success-animated');
-        message.innerText = "";
-    }
-
-    /* === If fname is empty === */
-    if (fname.value.trim() === "") {
-        message.innerText = "Firstname cannot be blank";
-        message.classList.add('form-warning-animated');
-        message.classList.remove('form-success-animated');
-    } else {
-        message.classList.remove('form-warning-animated');
-        message.classList.add('form-success-animated');
-        message.innerText = "";
-    }
-
-    /* === If lname is empty === */
-    if (lname.value.trim() === "") {
-        message.innerText = "Lastname cannot be blank";
-        message.classList.add('form-warning-animated');
-        message.classList.remove('form-success-animated');
-    } else {
-        message.classList.remove('form-warning-animated');
-        message.classList.add('form-success-animated');
-        message.innerText = "";
-    }
-
-    /* === If gender is empty === */
-    if (gender.value.trim() === "") {
-        message.innerText = "Gender cannot be blank";
-        message.classList.add('form-warning-animated');
-        message.classList.remove('form-success-animated');
-    } else {
-        message.classList.remove('form-warning-animated');
-        message.classList.add('form-success-animated');
-        message.innerText = "";
-    }
-
-    /* === If course is empty === */
-    if (course.value.trim() === "") {
-        message.innerText = "Course cannot be blank";
-        message.classList.add('form-warning-animated');
-        message.classList.remove('form-success-animated');
-    } else {
-        message.classList.remove('form-warning-animated');
-        message.classList.add('form-success-animated');
-        message.innerText = "";
+        setTimeout(() => {
+            message.classList.remove('form-warning-animated');
+            message.classList.add('form-success-animated');
+            message.innerText = "Changes saved successfully";
+            setTimeout(() => {
+                message.style.display = "none";
+                /* === Clear inputs  === */
+                regno.value = "";
+                fname.value = "";
+                lname.value = "";
+                gender.value = "";
+                course.value = "";
+            }, 3000)
+        }, 100)
     }
 
 }

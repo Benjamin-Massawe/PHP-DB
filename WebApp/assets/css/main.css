@@ -114,19 +114,19 @@
         }
         
         .form-success-animated {
-            margin-top: 20px;
+            margin-top: 0px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #7acf7f;
+            background: #50c058;
             padding: 7px 9px;
-            color: #000;
+            color: #fff;
             border-radius: 5px;
-            animation: show-slide .3s ease-in-out;
+            animation: show-slide .5s ease-in-out;
         }
         
         .form-warning-animated {
-            margin-top: 20px;
+            margin-top: 0px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -134,6 +134,7 @@
             padding: 7px 9px;
             color: #fff;
             border-radius: 5px;
+            animation: show-slide .5s ease-in-out;
         }
         
         @keyframes show-slide {
