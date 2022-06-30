@@ -47,6 +47,11 @@
         
         .nav-brand img {
             width: 42px;
+            transition: all .3s ease;
+        }
+        
+        .nav-brand img:hover {
+            transform: rotate(360deg);
         }
         
         .nav-links {
@@ -61,7 +66,7 @@
             color: #fff;
             text-decoration: none;
             font-size: 13px;
-            transition: all .3s ease-in;
+            transition: all .3s ease;
         }
         
         .nav-links a:hover {
@@ -70,6 +75,11 @@
         /* ============================
  # Form
  =============================*/
+        
+        form {
+            padding: 20px 35px 40px 35px;
+            margin: 25px 0;
+        }
         
         .form_wrapper {
             display: flex;
@@ -102,34 +112,40 @@
         .form_wrapper:hover {
             transform: scale(1.1);
         }
-        /* .form_wrapper .create_text {
-            color: rgba(7, 103, 213, 0.7);
-            animation: back-light 20s infinite forwards ease-in-out;
+        
+        .form-success-animated {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #7acf7f;
+            padding: 7px 9px;
+            color: #000;
+            border-radius: 5px;
+            animation: show-slide .3s ease-in-out;
         }
         
-        @keyframes back-light {
-            0% {
-                color: rgba(7, 103, 213, 0.7);
-            }
-            25% {
-                color: rgba(213, 12, 216, 0.7);
-            }
-            50% {
-                color: rgba(4, 134, 134, 0.7);
-            }
-            75% {
-                color: rgba(234, 13, 138, 0.83);
-            }
-            10% {
-                color: rgba(7, 103, 213, 0.7);
-            }
-        } */
-        
-        form {
-            padding: 20px 35px 40px 35px;
+        .form-warning-animated {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ea4758;
+            padding: 7px 9px;
+            color: #fff;
+            border-radius: 5px;
         }
         
-        form h1 {
+        @keyframes show-slide {
+            from {
+                transform: translateY(-15px);
+            }
+            to {
+                transform: translateY(0px);
+            }
+        }
+        
+        h1.create_text {
             text-align: center;
         }
         
@@ -149,23 +165,24 @@
         input {
             border: none;
             outline: none;
-            border-radius: 2px;
+            border-radius: 3px;
             border: 1px solid #767676;
-            padding: 3px 10px 3px 10px;
+            padding: 6px 10px 6px 10px;
         }
         
-        .submit {
+        #submit {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 20px;
             border: none;
             border: 1px solid #1e90ff;
             background: #1e90ff;
             color: #fff;
-            padding: 4px;
+            padding: 7px 9px;
             transition: all .3s ease-in;
+            font-size: 16px;
         }
         
-        .submit:hover {
+        #submit:hover {
             cursor: pointer;
             background: transparent;
             border: 1px solid #1e90ff;
