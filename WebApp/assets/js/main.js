@@ -88,52 +88,59 @@ form.onsubmit = (e) => {
 /* === Check inputs function  === */
 function checkInputs() {
 
-    inputs_Shake_error();
-
-    function inputs_Shake_error() {
-
-        /* === If regno is empty === */
-        if (regno.value.trim() === "") {
-            regno.classList.add('shake', 'error');
-        } else {
-            regno.classList.remove('success');
-        }
-
-        /* === If fname is empty === */
-        if (fname.value.trim() === "") {
-            fname.classList.add('shake', 'error');
-        } else {
-            fname.classList.remove('success');
-        }
-
-        /* === If lname is empty === */
-        if (lname.value.trim() === "") {
-            elname.classList.add('shake', 'error');
-        } else {
-            lname.classList.remove('success');
-        }
-
-        /* === If gender is empty === */
-        if (gender.value.trim() === "") {
-            gender.classList.add('shake', 'error');
-        } else {
-            gender.classList.remove('success');
-        }
-
-        /* === If course is empty === */
-        if (course.value.trim() === "") {
-            course.classList.add('shake', 'error');
-        } else {
-            course.classList.remove('success');
-        }
-
-        /* === Remove shake after 500ms === */
-        setTimeout(() => {
-            regno.classList.remove('shake');
-            fname.classList.remove('shake');
-            lname.classList.remove('shake');
-            gender.classList.remove('shake');
-            course.classList.remove('shake');
-        }, 500)
+    /* === If regno is empty === */
+    if (regno.value.trim() === "") {
+        message.innerText = "Regno cannot be blank";
+        message.classList.add('form-warning-animated');
+        message.classList.remove('form-success-animated');
+    } else {
+        message.classList.remove('form-warning-animated');
+        message.classList.add('form-success-animated');
+        message.innerText = "";
     }
+
+    /* === If fname is empty === */
+    if (fname.value.trim() === "") {
+        message.innerText = "Firstname cannot be blank";
+        message.classList.add('form-warning-animated');
+        message.classList.remove('form-success-animated');
+    } else {
+        message.classList.remove('form-warning-animated');
+        message.classList.add('form-success-animated');
+        message.innerText = "";
+    }
+
+    /* === If lname is empty === */
+    if (lname.value.trim() === "") {
+        message.innerText = "Lastname cannot be blank";
+        message.classList.add('form-warning-animated');
+        message.classList.remove('form-success-animated');
+    } else {
+        message.classList.remove('form-warning-animated');
+        message.classList.add('form-success-animated');
+        message.innerText = "";
+    }
+
+    /* === If gender is empty === */
+    if (gender.value.trim() === "") {
+        message.innerText = "Gender cannot be blank";
+        message.classList.add('form-warning-animated');
+        message.classList.remove('form-success-animated');
+    } else {
+        message.classList.remove('form-warning-animated');
+        message.classList.add('form-success-animated');
+        message.innerText = "";
+    }
+
+    /* === If course is empty === */
+    if (course.value.trim() === "") {
+        message.innerText = "Course cannot be blank";
+        message.classList.add('form-warning-animated');
+        message.classList.remove('form-success-animated');
+    } else {
+        message.classList.remove('form-warning-animated');
+        message.classList.add('form-success-animated');
+        message.innerText = "";
+    }
+
 }
