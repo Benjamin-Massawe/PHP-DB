@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($result) {
         echo 'Registration number is already taken';
+    }
     else {
         $sql = 'INSERT INTO bitclass(regno, fname, lname, gender, course) VALUES(:regno, :fname, :lname, :gender, :course)';
         $stmt = $pdo->prepare($sql);
