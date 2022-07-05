@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ===== Metadata ===== -->
+    <meta charset="utf-8">
+    <!-- ===== Main CSS ===== -->
+    <link rel="stylesheet" href="main.css">
+    <!-- ===== Favicon | PageIcon ===== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- ===== Title ===== -->
+    <title>Registration Form</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+        
+        .form_wrapper {
+            display: flex;
+            background: #fff;
+            border-radius: 5px;
+            margin-top: 120px;
+            transition: all .3s ease-in;
+        }
+        
+        h1.create_text {
+            text-align: center;
+        }
+        
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row wrap;
+            gap: 20px;
+        }
+        
+        input,
+        label {
+            margin-bottom: 10px;
+        }
+        
+        input {
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            border: 1px solid #767676;
+            padding: 6px 10px 6px 10px;
+        }
+        
+        select {
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            border: 1px solid #767676;
+            padding: 6px 10px 6px 10px;
+            width: 43%;
+        }
+        
+        .submission {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+            margin-top: 20px;
+        }
+        
+        #submit,
+        #reset {
+            text-align: center;
+        }
+        
+        #submit:hover,
+        #reset:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== Form Wrapper ===== -->
+    <div class="form_wrapper">
+        <form action="save_to_db.php" method="POST">
+            <div class="message"></div>
+            <h1 class="create_text">Customer Registration</h1>
+            <div class="input-group">
+                <label for="name">
+                       Customer Name
+                    </label>
+                <input type="text" id="name" name="name" placeholder="Name">
+            </div>
+
+            <div class="input-group">
+                <label for="contact">Contact </label>
+                <input type="text" id="contact" name="contact" placeholder="Phone">
+            </div>
+
+            <div class="input-group">
+                <label for="days"> Preferred days of purchasing </label>
+                <input type="text" id="days" name="days" placeholder="Days">
+            </div>
+
+            <div class="input-group ">
+                <label for="item"> Favourite item </label>
+                <select id="item" name="item">
+                    <option value="Printer">Printer</option>
+                    <option value="saab">Mouse</option>
+                    <option value="fiat">Monitor</option>
+                    <option value="audi">Keyboard</option>
+                  </select>
+            </div>
+            <div class="submission">
+                <input type="submit " value="Save " id="submit">
+                <input type="reset " value="Reset " id="reset">
+            </div>
+        </form>
+    </div>
+    <!-- ===== Form Wrapper ===== -->
+
+
+
+</body>
+
+</html>

@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 80vh;
 }
 
 * {
@@ -22,6 +22,7 @@ body {
 
 p.lead {
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -29,27 +30,33 @@ p.lead {
 # FORM
 =============================*/
 
-form {
-    padding: 20px 35px 20px 35px;
-    margin: 25px 0;
+.form-wrapper {
+    width: 70%;
 }
 
-.form-wrapper {
-    background: #fff;
-    width: 65%;
+input {
+    border: none;
+    outline: none;
+    padding-right: 20px;
+}
+
+.td-label {
+    width: 200px;
+}
+
+.td-input {
+    width: 100px;
 }
 
 .multi-inputs {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
 }
 
 .multi-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
     margin-top: 20px;
 }
